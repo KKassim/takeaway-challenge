@@ -3,6 +3,7 @@ attr_reader :order_list
 
     def initialize
         @order_list = []
+        @price_list = []
         @sum_of_orders = 0
     end
 
@@ -10,15 +11,15 @@ attr_reader :order_list
         if @menu.include?(food) == false
             raise "the order is not in the menu"
         end
-        @order_selection.push(food)
+        @order_list.push(food)
     
     end
 
     def total_cost
-            @order_selection.each do |food, price| @total_price << @menu[food]
+            @order_list.each do |food, price| @price_list << @menu[food]
             end
-            @total_price.each {|bill| @sum += bill}
-            return @sum
+            @price_list.each { |bill| @total += bill}
+            return @total
     
     end
 end
