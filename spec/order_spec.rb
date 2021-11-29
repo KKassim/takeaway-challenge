@@ -9,7 +9,7 @@ describe Order do
   end
 
   it 'adds orders to order_list' do
-    subject.add_orders
+    subject.add_orders(order)
     expect(subject.order_list).to include order
   end
 end

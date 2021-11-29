@@ -1,14 +1,15 @@
-  class Menu
+class Menu
+
+  attr_reader :menu
+  def initialize
+    @menu = Hash.new
+  end
     
-        def initialize
-            @menu = Hash.new
-        end
+  def add_to_menu(food, price)
+    @menu[food] = price
+  end
     
-        def add_to_menu(food, price)
-            @menu[price] = food
-        end
-    
-        def view_menu
-            @menu
-        end
-    end
+  def view_menu
+    @menu
+  end
+end
